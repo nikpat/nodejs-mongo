@@ -102,6 +102,19 @@ exports.adduser = function(req, res){
   	
 };
 
+exports.deluser = function(req, res){
+	var userId = req.body.userId;
+	//var query = userObj.remove({ id: userId });
+    userObj.findByIdAndRemove(userId,function(err){
+    	if(err){
+    		console.log(err);
+    	}
+    	else{
+    		res.send('done');
+    	}    	
+    });
+};
+
 exports.logout = function(req,res){
 	delete req.session.user;
 	res.redirect('/');

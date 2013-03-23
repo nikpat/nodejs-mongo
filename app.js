@@ -34,6 +34,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.all('/dash/', routes.dashboard);
 app.post('/adduser/', routes.adduser);
+app.post('/deluser/', routes.deluser);
 app.get('/logout', routes.logout);
 
 //for security we would not allow direct access
